@@ -29,3 +29,19 @@ class SeniorQuestions(models.Model):
     question_e_2 = models.IntegerField()
     teacher = models.ForeignKey('Teachers', on_delete=models.CASCADE)
     team = models.ForeignKey('Teams', on_delete=models.CASCADE)
+
+
+class JuniorQuestions(models.Model):
+    
+    question_a_1 = models.IntegerField()
+    question_a_2 = models.IntegerField()
+    question_a_3 = models.IntegerField()
+    question_b_1 = models.IntegerField()
+    question_c_1 = models.IntegerField()
+    question_c_2 = models.IntegerField()
+    question_d_1 = models.IntegerField()
+    question_d_2 = models.IntegerField()
+    question_e_1 = models.IntegerField()
+    question_e_2 = models.IntegerField()
+    teacher = models.ForeignKey('Teachers', on_delete=models.CASCADE)
+    team = models.ForeignKey('Teams', on_delete=models.CASCADE)
