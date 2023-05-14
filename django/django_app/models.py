@@ -1,32 +1,31 @@
 from django.db import models
 
 
-class Teacher(models.Model):
+class Teachers(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
-
-class Question(models.Model):
-    title = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.title
-
-
-class Team(models.Model):
+class Teams(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
-
-class Score(models.Model):
-    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-    team = models.ForeignKey(Team, on_delete=models.CASCADE)
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    score = models.IntegerField(default=0)
-
-    def __str__(self):
-        return f"{self.team.name} - {self.question.title}: {self.score}"
+class SeniorQuestions(models.Model):
+    
+    question_a_1 = models.IntegerField()
+    question_a_2 = models.IntegerField()
+    question_a_3 = models.IntegerField()
+    question_a_4 = models.IntegerField()
+    question_a_5 = models.IntegerField()
+    question_b_1 = models.IntegerField()
+    question_c_1 = models.IntegerField()
+    question_c_2 = models.IntegerField()
+    question_d_1 = models.IntegerField()
+    question_d_2 = models.IntegerField()
+    question_e_1 = models.IntegerField()
+    question_e_2 = models.IntegerField()
+    teacher = models.ForeignKey('Teachers', on_delete=models.CASCADE)
+    team = models.ForeignKey('Teams', on_delete=models.CASCADE)
